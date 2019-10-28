@@ -1,0 +1,4 @@
+Preprocessorn "byter ut" makron med vad de står för.
+Till exempel som definieras med #define, eller filer som inkluderas #include (t.ex #include<math.h>)
+Kompilatorn översätter koden till ett lägre programspråk, till exemepel en körbar fil, eller lägre asm-kod eller objektfiler
+En länkare tar flera filer (t.ex bibliotek eller filer som en kompilerar ihop) och skapar en enda körbar fil. (ell bibliotek etc.)
