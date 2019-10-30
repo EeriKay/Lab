@@ -17,3 +17,5 @@ void insertleftnode(struct node *);
 void setdata(struct node *, double);
 
 float getdata(struct node *);
+
+void printall(struct node *);

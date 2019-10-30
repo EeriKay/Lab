@@ -85,6 +85,9 @@ int main()
       case 7:
       leave=1;
       break;
+      case 10:
+      printf("All the current data points are, in order: \n");
+      printall(pointer);
       default:
       i=0;
       break;
@@ -97,9 +100,10 @@ int main()
       printf("3. Add new node! \n");
       printf("5. Remove current node \n");
       printf("7. Quit program \n");
+      printf("10. Print all \n");
       while(scanf("%d",&i)!=1){
         printf("Bad input! Here 1\n");
-      }
+    }
     }
   }
 

@@ -109,3 +109,27 @@ float getdata(struct node *p)
   float f =p->data;
   return f;
 }
+
+void printall(struct node *p)
+{
+  struct node * q= p;
+  while(q->previous!=NULL)
+  {
+    q=q->previous;
+  }
+  while(q!=NULL)
+  {
+    if(p!=q)
+    {
+      printf("%.3f ",q->data);
+
+    }
+    else
+    {
+      printf("[%.3f] ",q->data);
+    }
+    q=q->next;
+  }
+  printf("\n");
+
+}
