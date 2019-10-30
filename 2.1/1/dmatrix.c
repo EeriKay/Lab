@@ -118,6 +118,7 @@ void printvector(struct dynvector * p)
 }
 void printmatrix(struct dynmatrix * p)
 {
+  printf("Dynami")
   repointdynmatrix(p);
   struct dynmatrix * beginning = p;
   while(p!=NULL)

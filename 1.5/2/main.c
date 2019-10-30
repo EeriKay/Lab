@@ -7,7 +7,7 @@ int main(){
   printf("1) Plus 1\n");
   printf("2) Minus 1 \n");
   printf("4) Avsluta programmet \n");
-  while (scanf("%d",&number)!=EOF)
+  while (1==scanf("%d",&number))
   {
     switch (number) {
       case 1:

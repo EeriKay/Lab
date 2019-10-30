@@ -1,8 +1,10 @@
 #include<stdio.h>
+#include<ctype.h>
 #include"nod.h"
 
 int main()
 {
+  char c;
   float fnumber;
   printf("Give your first node data! \n");
   if (scanf("%f",&fnumber)==1)
@@ -20,9 +22,10 @@ int main()
   /*Loop beginning for options */
   int i=0;
   int leave=0;
-  while(leave==0)
+  while(leave!=1)
   {
-    switch (i) {
+    switch (i)
+    {
       case 1:
         printf("How many steps do you want to move? Use +/- integer value!\n");
         if (scanf("%d",&i )==1)
@@ -83,8 +86,7 @@ int main()
         }
         break;
       case 7:
-      leave=1;
-      break;
+      return 0;
       case 10:
       printf("All the current data points are, in order: \n");
       printall(pointer);
@@ -93,7 +95,6 @@ int main()
       break;
 
     }
-    if (leave!=1){
       printf("The current data value is %.3f \nOptions: \n", getdata(pointer));
       printf("1. Move \n");
       printf("2. Change data for current node \n");
@@ -101,12 +102,16 @@ int main()
       printf("5. Remove current node \n");
       printf("7. Quit program \n");
       printf("10. Print all \n");
-      while(scanf("%d",&i)!=1){
-        printf("Bad input! Here 1\n");
+      if(scanf("%d",&i)!=1)
+      {
+        printf("Something bad happened! \n");
+        while((c=getc(stdin))!='\n') /*When something bad happens, bad input is still stored in stdin. This will remove that by advancing the stream with getc, until it hits \n. Then we can use scanf again */
+        {
+          ;
+        }
+        int i=0;
+      }
     }
-    }
-  }
-
 
   return 0;
 }

@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<math.h>
-int main()
+int main(void )
 {
   int i;
   double j=0;

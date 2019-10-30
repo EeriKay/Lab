@@ -1,6 +1,6 @@
   #include<stdio.h>
 
-  int main(){
+  int main(void){ /*Good programming practice to make it clear that we are not inputting any value */
     printf("Låt oss göra lite matematik:\n"); fflush(stdout);/*Fungerar utan att använda esc-sekv på min kompilator */
     printf("Skriv ditt första tal: \n"); fflush(stdout);
     float i, j;
