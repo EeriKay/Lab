@@ -72,3 +72,58 @@ struct dynvector * newdynvector(struct dynvector *p)
   newp->previous=p;
   p->next=newp;
 }
+
+void printdata(const struct data * p)
+{
+  if (p!=NULL)
+  {
+      if (p->line==0)
+      {
+        if(p->sign==1)
+        {
+          printf("%d.%d ", p->X, p->Y);
+        }
+        else
+        {
+          printf("-%d.%d ", p->X, p->Y);
+        }
+      }
+      else
+      {
+        if(p->sign==1)
+        {
+            printf("%d.%d\n", p->X, p->Y);
+        }
+        else
+        {
+          printf("-%d.%d\n", p->X, p->Y);
+        }
+      }
+  }
+  else
+  {
+    printf("NULL pointer! \n");
+  }
+}
+
+void printvector(struct dynvector * p)
+{
+  struct dynvector * q=p;
+  repointdynvector(q);
+  while(q!=NULL)
+  {
+    printdata(&(q->data));
+    q=q->next;
+  }
+}
+void printmatrix(struct dynmatrix * p)
+{
+  repointdynmatrix(p);
+  struct dynmatrix * beginning = p;
+  while(p!=NULL)
+  {
+    printvector(p->dvector);
+    p=p->next;
+  }
+  p = beginning;
+}

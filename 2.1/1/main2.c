@@ -1,57 +1,33 @@
 /*Temporary file for playing with files */
 #include"dmatrix.h"
 #include<stdio.h>
+#include<stdlib.h>
 
 
 
 int main(){
-FILE *utfil;
-char filnamn[30];
-printf("What's the name of your file? Max 30 letters\n");
 
-
-if (scanf("%s",filnamn)!=1)
-{
-  printf("Wrong format! Closing program");
-  return 0;
-}
-utfil=fopen(filnamn,"rb+");
-struct data D[4];
 struct data d1={0,0,1,0}; /*Y: X: SIGN: LINE: */
 struct data d2={0,1,1,1};
 struct data d3={0,1,0,0 };
 struct data d4={0,0,1 ,1};
-D[0]=d1;
-D[1]=d2;
-D[2]=d3;
-D[3]=d4;
-struct data *p = D;
-while(p<&D[4])
-{
-  if (p->line==0)
-  {
-    if(p->sign==1)
-    {
-      printf("%d.%d ", p->X, p->Y);
-    }
-    else
-    {
-      printf("-%d.%d ", p->X, p->Y);
-    }
-  }
-  else
-  {
-    if(p->sign==1)
-    {
-      printf("%d.%d\n", p->X, p->Y);
-    }
-    else
-    {
-      printf("-%d.%d\n", p->X, p->Y);
-    }
-  }
-p++;
-}
+printf("Bp 1\n");
+struct dynvector v11 = {NULL, NULL, d1};
+struct dynvector v12 = {NULL, &v11, d2};
+printf("Bp2 \n");
+v11.next=&v12;
+struct dynvector v21 = {NULL, NULL, d3};
+struct dynvector v22= {NULL, &v21, d4};
+v21.next = &v22;
+struct dynmatrix m1= {NULL, NULL, &v11};
+struct dynmatrix m2= {NULL, &m1, &v21};
+m1.next=&m2;
+struct dynvector *Vector1 = &v11;
+struct dynvector *Vector2=&v21;
+struct dynmatrix *Matrix = &m1;
+printdata(&d1);
 
+
+printmatrix(Matrix);
 return 0;
 }

@@ -23,3 +23,6 @@ struct dynvector * createdynvector(void);
 struct dynmatrix* createdynmatrix(void);
 struct dynmatrix * newdynmatrix(struct dynmatrix *);
 struct dynvector * newdynvector(struct dynvector *);
+void printdata(const struct data *);
+void printvector(struct dynvector *); /*doesn't change p */
+void printmatrix(struct dynmatrix *); /*Will reset all pointers */
