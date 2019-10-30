@@ -1,7 +1,7 @@
 #include<stdio.h>
-#include"las.h"
+#include"dmatrix.h"
 
 int main()
 {
-  
+    printf("Hello world!");
 }
